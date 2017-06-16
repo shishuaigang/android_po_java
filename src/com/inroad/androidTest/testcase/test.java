@@ -1,8 +1,8 @@
 package com.inroad.androidTest.testcase;
 
-import com.inroad.androidTest.common.flag;
-import com.inroad.androidTest.common.login;
-import com.inroad.androidTest.driver.driver;
+import com.inroad.androidTest.common.*;
+import com.inroad.androidTest.driver.Driver;
+import com.inroad.androidTest.page.*;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -10,16 +10,13 @@ import io.appium.java_client.android.AndroidDriver;
  */
 public class test {
     public static void main(String args[]) {
-        AndroidDriver d = new driver().get_driver();
-        int i = 0;
-        try {
-            i = new flag(d).pagejudge();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(i);
-        login ll = new login("18121225109", "123456",d);
+        AndroidDriver d = new Driver().get_driver();
+        int i;
+        i = new Flag(d).pagejudge();
+        Login ll = new Login("18121225109", "123456", d);
         ll.login_all(i);
-        d.quit();
+        d.findElement(Home.switch_btn).click();
+        d.findElement(Menu.knowledge).click();
+        d.findElement(Knowledge.browse).click();
     }
 }

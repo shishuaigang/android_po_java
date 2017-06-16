@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
  * Created by shishuaigang on 2017/6/15.
  * 非首次打开app登录页面
  */
-public class openapp {
+public class OpenApp {
     public static By username = By.id("com.gongzhidao.inroad:id/shouji_edit"); //用户名输入框
     public static By password = By.id("com.gongzhidao.inroad:id/passwd_edit"); //密码输入框'
     public static By loginButton = By.id("com.gongzhidao.inroad:id/login_login"); //登录按钮

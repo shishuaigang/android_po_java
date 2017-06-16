@@ -1,8 +1,8 @@
 package com.inroad.androidTest.common;
 
-import com.inroad.androidTest.page.firstopenapp;
-import com.inroad.androidTest.page.openapp;
-import com.inroad.androidTest.page.home;
+import com.inroad.androidTest.page.FirstOpenApp;
+import com.inroad.androidTest.page.OpenApp;
+import com.inroad.androidTest.page.Home;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
  * 标识点，用来确定处于什么界面
  */
 
-public class flag {
+public class Flag {
 
     private WebDriver driver;
 
-    public flag(WebDriver d) {
+    public Flag(WebDriver d) {
         this.driver = d;
     }
 
@@ -28,8 +28,8 @@ public class flag {
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(openapp.username);
-            driver.findElement(openapp.password);
+            driver.findElement(OpenApp.username);
+            driver.findElement(OpenApp.password);
             val = 2;
         } catch (NoSuchElementException e) {
         }
@@ -37,15 +37,15 @@ public class flag {
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(home.switch_btn);
-            driver.findElement(home.personalInfo_btn);
+            driver.findElement(Home.switch_btn);
+            driver.findElement(Home.personalInfo_btn);
             val = 3;
         } catch (NoSuchElementException e) {
         }
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(firstopenapp.usercode);
+            driver.findElement(FirstOpenApp.usercode);
             val = 1;
         } catch (NoSuchElementException e) {
         }

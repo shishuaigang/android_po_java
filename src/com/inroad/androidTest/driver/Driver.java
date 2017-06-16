@@ -10,7 +10,7 @@ import java.net.URL;
  * This program is used to start app
  */
 
-public class driver {
+public class Driver {
 
     private AndroidDriver driver;
 
