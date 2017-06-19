@@ -10,12 +10,11 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static com.inroad.androidTest.page.Home.switchbtn;
 import static com.inroad.androidTest.page.Knowledge.browse;
+import static com.inroad.androidTest.page.Knowledge.search;
 import static com.inroad.androidTest.page.Menu.knowledge;
 
 /**
@@ -27,8 +26,8 @@ public class testTest {
 
     private AndroidDriver driver;
 
-    @BeforeClass
-    public void beforeClass() {
+    @BeforeMethod
+    public void beforeMethod(){
         driver = new Driver().get_driver();
         int i;
         i = new Flag(driver).pagejudge();
@@ -40,15 +39,23 @@ public class testTest {
     }
 
     @Test
-    public void TestNgLearn() {
+    public void TestNgBrose() {
         switchbtn.click();
         knowledge.click();
         browse.click();
         Assert.assertEquals("知识库浏览",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
     }
 
-    @AfterClass
-    public void afterClass() {
+    @Test
+    public void TestNgSearch() {
+        switchbtn.click();
+        knowledge.click();
+        search.click();
+        Assert.assertEquals("知识库检索",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
+    }
+
+    @AfterMethod
+    public void afterMethod() {
         driver.quit();
     }
 
