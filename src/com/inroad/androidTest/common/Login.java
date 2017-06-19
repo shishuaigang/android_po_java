@@ -1,9 +1,12 @@
 package com.inroad.androidTest.common;
 
+
+import static com.inroad.androidTest.page.OpenApp.*;
+
 import com.inroad.androidTest.page.OpenApp;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +24,7 @@ public class Login {
         this.username = u;
         this.password = p;
         this.driver = d;
+        OpenApp p1 = PageFactory.initElements(driver,OpenApp.class);
     }
 
     void inputcode(){
@@ -32,15 +36,12 @@ public class Login {
     }
 
     void logiN() {
-        WebElement uname = driver.findElement(OpenApp.username);
-        WebElement pwd = driver.findElement(OpenApp.password);
-        WebElement login_btn = driver.findElement(OpenApp.loginButton);
 
         uname.clear();
         uname.sendKeys(username);
-        pwd.clear();
-        pwd.sendKeys(password);
-        login_btn.click();
+        passwd.clear();
+        passwd.sendKeys(password);
+        loginButton.click();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -55,8 +56,7 @@ public class Login {
                 break;
             case 2:
                 System.out.println("非安装完首次打开app的登录方式");
-                WebElement setting = driver.findElement(OpenApp.chooseserver);
-                setting.click();
+                chooseserver.click();
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 inputcode();
                 logiN();

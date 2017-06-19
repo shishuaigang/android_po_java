@@ -1,6 +1,7 @@
 package com.inroad.androidTest.page;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 /**
  * Created by shishuaigang on 2017/6/16.
@@ -8,7 +9,13 @@ import org.openqa.selenium.By;
  */
 
 public class Knowledge {
-    public static By browse = By.xpath("//android.widget.TextView[contains(@text,'浏览')]"); //浏览
-    public static By collection = By.xpath("//android.widget.TextView[contains(@text,'我的收藏')]"); //我的收藏
-    public static By search = By.xpath("//android.widget.TextView[contains(@text,'检索')]"); //检索
+
+    @FindBy(xpath="//android.widget.TextView[contains(@text,'浏览')]") //浏览
+    public static WebElement browse;
+
+    @FindBy(xpath="//android.widget.TextView[contains(@text,'我的收藏')]") //我的收藏
+    public static WebElement collection;
+
+    @FindBy(xpath="//android.widget.TextView[contains(@text,'检索')]") //检索
+    public static WebElement search;
 }

@@ -5,8 +5,13 @@ import com.inroad.androidTest.page.OpenApp;
 import com.inroad.androidTest.page.Home;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
+
+import static com.inroad.androidTest.page.FirstOpenApp.*;
+import static com.inroad.androidTest.page.Home.*;
+import static com.inroad.androidTest.page.OpenApp.*;
 
 /**
  * Created by shishuaigang on 2017/6/14.
@@ -24,12 +29,14 @@ public class Flag {
 
     public int pagejudge() {
         int val = 4;
-
+        OpenApp p1 = PageFactory.initElements(driver,OpenApp.class);
+        Home p2 = PageFactory.initElements(driver,Home.class);
+        FirstOpenApp p3 = PageFactory.initElements(driver,FirstOpenApp.class);
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(OpenApp.username);
-            driver.findElement(OpenApp.password);
+            uname.isDisplayed();
+            passwd.isDisplayed();
             val = 2;
         } catch (NoSuchElementException e) {
         }
@@ -37,15 +44,15 @@ public class Flag {
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(Home.switch_btn);
-            driver.findElement(Home.personalInfo_btn);
+            switchbtn.isDisplayed();
+            personal.isDisplayed();
             val = 3;
         } catch (NoSuchElementException e) {
         }
 
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            driver.findElement(FirstOpenApp.usercode);
+            usercode.isDisplayed();
             val = 1;
         } catch (NoSuchElementException e) {
         }
