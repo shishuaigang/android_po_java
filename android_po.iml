@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="io.appium:java-client:4.1.2" level="project" />
-    <orderEntry type="library" exported="" name="org.testng:testng:6.11" level="project" />
+    <orderEntry type="library" name="org.testng:testng:6.11" level="project" />
   </component>
 </module>
