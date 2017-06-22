@@ -12,11 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import static com.inroad.androidTest.page.Home.switchbtn;
-import static com.inroad.androidTest.page.Knowledge.browse;
-import static com.inroad.androidTest.page.Knowledge.search;
-import static com.inroad.androidTest.page.Menu.knowledge;
-
 /**
  * Created by shishuaigang on 2017/6/19.
  * 测试用的testcase
@@ -40,18 +35,20 @@ public class testTest {
 
     @Test
     public void TestNgBrose() {
-        switchbtn.click();
-        knowledge.click();
-        browse.click();
+        new TestKnowledge().browse();
         Assert.assertEquals("知识库浏览",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
     }
 
     @Test
     public void TestNgSearch() {
-        switchbtn.click();
-        knowledge.click();
-        search.click();
+        new TestKnowledge().search();
         Assert.assertEquals("知识库检索",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
+    }
+
+    @Test
+    public void TestNgCollection() {
+        new TestKnowledge().collection();
+        Assert.assertEquals("我的收藏",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
     }
 
     @AfterMethod
