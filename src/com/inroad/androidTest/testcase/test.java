@@ -20,6 +20,7 @@ public class test {
         AndroidDriver d = new Driver().get_driver();
         int i;
         i = new Flag(d).pageJudge();
+        System.out.println(i);
         Login ll = new Login("18121225109", "123456", d);
         ll.login_all(i);
         Home p1 = PageFactory.initElements(d,Home.class);

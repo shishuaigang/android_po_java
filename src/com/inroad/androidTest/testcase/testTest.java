@@ -25,7 +25,7 @@ public class testTest {
     public void beforeMethod(){
         driver = new Driver().get_driver();
         int i;
-        i = new Flag(driver).pagejudge();
+        i = new Flag(driver).pageJudge();
         Login ll = new Login("18121225109", "123456", driver);
         ll.login_all(i);
         Home p1 = PageFactory.initElements(driver, Home.class);
@@ -39,13 +39,13 @@ public class testTest {
         Assert.assertEquals("知识库浏览",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
     }
 
-    @Test
+    @Test(dependsOnMethods = {"TestNgBrose"})
     public void TestNgSearch() {
         new TestKnowledge().search();
         Assert.assertEquals("知识库检索",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
     }
 
-    @Test
+    @Test(invocationCount = 10)
     public void TestNgCollection() {
         new TestKnowledge().collection();
         Assert.assertEquals("我的收藏",driver.findElement(By.id("com.gongzhidao.inroad:id/tv_topbar_name")).getText().trim());
