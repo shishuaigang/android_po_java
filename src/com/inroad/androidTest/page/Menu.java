@@ -20,27 +20,18 @@ public class Menu {
     @FindBy(id = "com.gongzhidao.inroad:id/task") //任务
     public static WebElement task;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'人员行为安全')]") //人员行为安全
-    public static WebElement safetyBehavior;
+    @FindBy(xpath = "//android.widget.TextView[contains(@text,'工艺管理')]") //工艺管理
+    public static WebElement process_management;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'人员培训')]") //人员培训
-    public static WebElement training;
+    @FindBy(xpath = "//android.widget.TextView[contains(@text,'机电管理')]") //机电管理
+    public static WebElement electromechanical_management;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'安全作业单')]") //安全作业单
-    public static WebElement safetySheet;
+    @FindBy(xpath = "//android.widget.TextView[contains(@text,'HSE')]") //HSE管理
+    public static WebElement hse;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'设备仪表异常管理')]") //设备仪表异常管理
-    public static WebElement abnormityManagment;
-
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'设备仪表日常管理')]") //设备仪表日常管理
-    public static WebElement dailyManagment;
-
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'关键数据')]") //关键数据
-    public static WebElement coredata;
-
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'设备维保')]") //设备维保
-    public static WebElement equipMaintenance;
-
-    @FindBy(xpath = "//android.widget.TextView[contains(@text,'知识库')]") //知识库
+    @FindBy(xpath = "//android.widget.TextView[contains(@text,'信息库')]") //信息库
     public static WebElement knowledge;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(@text,'培训管理')]") //培训管理
+    public static WebElement training_management;
 }
